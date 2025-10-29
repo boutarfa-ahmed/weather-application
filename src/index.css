@@ -1,0 +1,46 @@
+:root{
+    --Neutral-900: hsl(243, 96%, 9%);
+    --Neutral-800: hsl(243, 27%, 20%);
+    --Neutral-700: hsl(243, 23%, 24%);
+    --Neutral-600: hsl(243, 23%, 30%);
+    --Neutral-300: hsl(240, 6%, 70%);
+    --Neutral-200: hsl(250, 6%, 84%);
+    --Neutral-0: hsl(0, 0%, 100%);
+    --Orange-500: hsl(28, 100%, 52%);
+    --Blue-500: hsl(233, 67%, 56%);
+    --Blue-700: hsl(248, 70%, 36%);
+    --font-size: 18px;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url(src/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf) format(truetype);
+    src: url(src/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf) format(truetype);
+    font-weight: 300, 500, 600, 600i, 700;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url(src/assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf) format(truetype);
+    font-weight: 700;
+}
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'DM Sans';
+    background-color: var(--Neutral-900);
+    color: var(--Neutral-200);
+    margin: 0 4.5rem;
+}
+
