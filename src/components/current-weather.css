@@ -1,0 +1,141 @@
+@import url('../index.css');
+
+.current-weather {
+    width: 700px;
+}
+
+/* Main Weather Card */
+.weather-card {
+    display: flex;
+    justify-content: center;
+    background: url("../assets/images/bg-today-large.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    color: var(--Neutral-0);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+
+.weather-card__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 21rem;
+    justify-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.location-info {
+    padding-top: 7rem;
+}
+
+.location-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--Neutral-0);
+}
+
+.current-date {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.85;
+    color: var(--Neutral-0);
+}
+
+.temperature-display {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+.temp-main {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--Neutral-0);
+}
+
+/* Weather Details Grid */
+.weather-details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 700px;
+}
+
+.detail-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background-color: var(--Neutral-800);
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+}
+
+.detail-label {
+    font-size: 1.7rem;
+    color: var(--Neutral-400);
+    margin: 0 0 0.5rem 0;
+    font-weight: 400;
+}
+
+.detail-value {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: var(--Neutral-0);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .weather-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .weather-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .temperature-display {
+        align-self: flex-end;
+    }
+
+    .temp-main {
+        font-size: 4rem;
+    }
+
+    .weather-icon {
+        font-size: 2.5rem;
+    }
+
+    .location-name {
+        font-size: 1.25rem;
+    }
+
+    .weather-details-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .temp-main {
+        font-size: 3.5rem;
+    }
+
+    .weather-icon {
+        font-size: 2rem;
+    }
+}

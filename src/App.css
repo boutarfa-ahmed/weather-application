@@ -1,0 +1,19 @@
+@import url('./index.css');
+
+.weather-main{
+    margin: 0 8rem 3rem 8rem;
+}
+
+.weather-main h1{
+    font-family: "Bricolage Grotesque";
+    text-align: center;
+    font-size: 3.7rem;
+    color: var(--Neutral-0);
+    padding-bottom: 4.5rem;
+}
+
+.layout-main {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}

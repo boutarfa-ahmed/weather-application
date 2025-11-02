@@ -1,0 +1,55 @@
+@import url('../index.css');
+
+.daily-forecast{
+    max-width: 700px;
+    margin-top: 3.5rem;
+}
+
+.daily-forecast h2{
+    color: var(--Neutral-0);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.forecast-grid{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1rem;
+   margin-top: 1.5rem;
+}
+
+.forecast-card{
+    background-color: var(--Neutral-800);
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.day-name{
+    text-align: center;
+    font-weight: 500;
+}
+
+.weather-icon{
+    text-align: center;
+}
+
+.weather-icon-img{
+    width: 4.5rem;
+    height: 4.5rem;
+    
+}
+
+.temperature{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.temperature span{
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--Neutral-200);
+}

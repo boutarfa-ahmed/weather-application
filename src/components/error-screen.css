@@ -1,0 +1,64 @@
+.error-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;;
+  color: var(--Neutral-0);
+  text-align: center;
+  gap: 2rem;
+}
+
+.error-icon img{
+  width: 3rem;
+  height: 3rem;
+}
+
+.error-icon h2 {
+    font-family: 'Bricolage Grotesque';
+    font-size: 3.9rem;
+}
+
+p {
+  font-size: 1.8rem;
+  font-weight: 200;
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.retry-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.1rem;
+  margin-top: 1rem;
+  background: var(--Neutral-700);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background 0.2s;
+}
+
+.retry-btn:hover {
+  background: var(--Neutral-600);
+}
+
+.reload-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

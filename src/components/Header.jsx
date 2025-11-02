@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { UnitsContext } from "../context/UnitsContext";
 import "./header.css";
 import applogo from "../assets/images/logo.svg";
 import icon_units from "../assets/images/icon-units.svg";
@@ -6,35 +7,10 @@ import icon_dropdown from "../assets/images/icon-dropdown.svg";
 
 function Header() {
   const [open, setOpen] = useState(false);
-  const [unitSystem, setUnitSystem] = useState("metric");
-  const [selectedUnits, setSelectedUnits] = useState({
-    temperature: "Celsius (°C)",
-    wind: "km/h",
-    precipitation: "Millimeters (mm)",
-  });
-
+  const { unitSystem, setUnitSystem, selectedUnits, setSelectedUnits } = useContext(UnitsContext);
   const menuRef = useRef(null);
 
-  //Load saved preferences
-  useEffect(() => {
-    const savedUnits = localStorage.getItem("selectedUnits");
-    const savedSystem = localStorage.getItem("unitSystem");
-
-    if (savedUnits) setSelectedUnits(JSON.parse(savedUnits));
-    if (savedSystem) setUnitSystem(savedSystem);
-  }, []);
-
-  //Save units
-  useEffect(() => {
-    localStorage.setItem("selectedUnits", JSON.stringify(selectedUnits));
-  }, [selectedUnits]);
-
-  //Save system
-  useEffect(() => {
-    localStorage.setItem("unitSystem", unitSystem);
-  }, [unitSystem]);
-
-  //Close menu when clicking outside
+  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -66,23 +42,20 @@ function Header() {
     },
   ];
 
-  //Switch entire system automatically
+  // Toggle full system (global)
   const toggleSystem = () => {
     setUnitSystem((prev) => {
       const newSystem = prev === "metric" ? "imperial" : "metric";
-
-      // Update all selected units automatically
       const updatedUnits = {};
       options.forEach((opt) => {
         updatedUnits[opt.type] = opt[newSystem];
       });
-
       setSelectedUnits(updatedUnits);
       return newSystem;
     });
   };
 
-  //Select one unit manually
+  // Select one unit manually (local only)
   const handleSelect = (type, value) => {
     setSelectedUnits((prev) => ({
       ...prev,
