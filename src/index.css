@@ -44,3 +44,11 @@ body{
     margin: 0 4.5rem;
 }
 
+@media (max-width:600px) {
+    body{
+        margin: 0 0.5rem;
+    }
+}
+
+
+

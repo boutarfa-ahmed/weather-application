@@ -9,7 +9,7 @@ export default function CurrentWeather({ weather, selectedUnits, location, hourl
   const { 
     temperature, 
     windspeed, 
-    winddirection,
+    
     weathercode,
     time 
   } = weather;
@@ -47,7 +47,7 @@ export default function CurrentWeather({ weather, selectedUnits, location, hourl
             <p className="current-date">{formattedDate}</p>
           </div>
           <div className="temperature-display">
-            <span className="weather-icon">{getWeatherIcon(weathercode)}</span>
+            <span className="weather-icon-head">{getWeatherIcon(weathercode)}</span>
             <span className="temp-main">{Math.round(temperature)}{tempUnit}</span>
           </div>
         </div>

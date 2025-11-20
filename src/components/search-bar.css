@@ -1,15 +1,14 @@
-@import url('../index.css');
-
 .search-bar {
-    width: 45rem;
-    height: 7rem;
-    margin: auto;
+    width: 100%;
+    max-width: 45rem;
+    margin: 0 auto 3rem;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
 }
 
 .search-input-wrapper {
+    width: 100%;
     flex: 1;
     position: relative;
 }
@@ -61,7 +60,6 @@
     transform: scale(0.98);
 }
 
-/* Suggestions Dropdown */
 .suggestions-dropdown {
     position: absolute;
     top: calc(100% + 0.5rem);
@@ -89,15 +87,6 @@
     background-color: var(--Neutral-600);
 }
 
-.suggestion-item.loading {
-    color: var(--Neutral-400);
-    cursor: default;
-}
-
-.suggestion-item.loading:hover {
-    background-color: transparent;
-}
-
 .suggestion-name {
     color: var(--Neutral-0);
     font-weight: 500;
@@ -109,20 +98,31 @@
     font-size: 1.1rem;
 }
 
-/* Scrollbar styling for suggestions */
-.suggestions-dropdown::-webkit-scrollbar {
-    width: 6px;
+/* Responsive Search Bar */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .search-bar button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
 }
 
-.suggestions-dropdown::-webkit-scrollbar-track {
-    background: var(--Neutral-700);
-}
+@media (max-width: 480px) {
+    .search-bar {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 
-.suggestions-dropdown::-webkit-scrollbar-thumb {
-    background: var(--Neutral-500);
-    border-radius: 3px;
-}
+    .search-bar button {
+        width: 100%;
+        padding: 1rem;
+    }
 
-.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
-    background: var(--Neutral-400);
+    .search-bar input {
+        font-size: 1.4rem;
+    }
 }

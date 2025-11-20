@@ -1,10 +1,8 @@
-@import url('./index.css');
-
-.weather-main{
+.weather-main {
     margin: 0 8rem 3rem 8rem;
 }
 
-.weather-main h1{
+.weather-main h1 {
     font-family: "Bricolage Grotesque";
     text-align: center;
     font-size: 3.7rem;
@@ -15,5 +13,44 @@
 .layout-main {
     display: flex;
     justify-content: center;
-    gap: 0;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1080px) {
+    .layout-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .right-side, .left-side {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-main {
+        margin: 0 2rem 2rem 2rem;
+    }
+
+    .weather-main h1 {
+        font-size: 3.2rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-main {
+        margin: 0 1rem 2rem 1rem;
+    }
+
+    .weather-main h1 {
+        
+        padding-bottom: 2rem;
+    }
+
+    .layout-main {
+        gap: 2rem;
+    }
 }

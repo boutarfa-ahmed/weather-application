@@ -1,199 +1,202 @@
-@import url('../index.css');
-
-/* ====== SECTION PRINCIPALE ====== */
 .hourly-forecast {
-  background-color: var(--Neutral-800);
-  border-radius: 16px;
-  margin: 0 1.5rem;
-  width: 350px;
-  max-height: 570px;
-  padding-bottom: 10px;
-  color: var(--Neutral-0);
-  display: flex;
-  flex-direction: column;
+    background-color: var(--Neutral-800);
+    border-radius: 16px;
+    width: 350px;
+    max-height: 570px;
+    padding-bottom: 10px;
+    color: var(--Neutral-0);
+    display: flex;
+    flex-direction: column;
 }
 
-/* ====== HEADER ====== */
 .hourly-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .hourly-header h2 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin: 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0;
 }
 
-/* ====== DROPDOWN DES JOURS ====== */
 .day-selector {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .day-btn {
-  background: var(--Neutral-700);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  color: var(--Neutral-0);
-  font-size: 0.95rem;
-  cursor: pointer;
-  outline: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: background 0.2s ease;
+    background: var(--Neutral-700);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--Neutral-0);
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease;
 }
 
 .day-btn:hover {
-  background: var(--Neutral-600);
+    background: var(--Neutral-600);
 }
 
-/* Menu déroulant */
 .day-menu {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background-color: var(--Neutral-700);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 0.3rem;
-  z-index: 50;
-  min-width: 140px;
-  max-height: 180px;
-  overflow-y: auto;
-  animation: fadeIn 0.15s ease-in-out;
+    position: absolute;
+    top: 110%;
+    left: -55px;
+    background-color: var(--Neutral-700);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 0.3rem;
+    z-index: 50;
+    min-width: 140px;
+    overflow-y: auto;
+    animation: fadeIn 0.15s ease-in-out;
 }
 
-/* Option de jour */
 .day-option {
-  padding: 0.45rem 0.8rem;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s;
-  font-size: 0.9rem;
-  color: var(--Neutral-0);
+    padding: 0.85rem 0.8rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s;
+    font-size: 1.3rem;
+    color: var(--Neutral-0);
 }
 
 .day-option:hover {
-  background-color: var(--Neutral-600);
+    background-color: var(--Neutral-600);
 }
 
 .day-option.active {
-  background-color: var(--Primary);
-  font-weight: 600;
+    background-color: var(--Primary);
+    font-weight: 600;
 }
 
-.tick {
-  float: right;
-}
-
-/* Animation d’apparition */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ====== GRILLE HORAIRES ====== */
 .hourly-forecast-grid {
-  display: flex;
-  flex-direction: column;
-  max-height: 470px;
-  gap: 12px;
-  overflow-y: auto;
-  padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: 470px;
+    gap: 12px;
+    overflow-y: auto;
+    padding: 0 20px 20px 20px;
 }
 
 .hourly-forecast-grid::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .hourly-forecast-grid::-webkit-scrollbar-thumb {
-  background: var(--Neutral-700);
-  border-radius: 4px;
+    background: var(--Neutral-700);
+    border-radius: 4px;
 }
 
-/* ====== CARTE HORAIRE ====== */
 .hourly-card {
-  background: var(--Neutral-700);
-  border-radius: 12px;
-  padding: 0 12px;
-  min-width: 80px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  transition: background 0.2s;
+    background: var(--Neutral-700);
+    border-radius: 12px;
+    padding: 4px 12px;
+    min-width: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
 }
 
 .hourly-card:hover {
-  background: var(--Neutral-600);
+    background: var(--Neutral-600);
 }
 
-/* ====== ICÔNES ET HEURES ====== */
 .hour-icon-time {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .hour-time {
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin: 0;
-  color: var(--Neutral-0);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0;
+    color: var(--Neutral-0);
 }
 
 .hour-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hour-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* ====== TEMPÉRATURE ====== */
-.hour-temp {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  color: var(--Neutral-0);
-}
-
-/* ====== RESPONSIVE ====== */
-@media (max-width: 400px) {
-  .hourly-forecast {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hour-temp {
+    font-size: 1.6rem;
+    font-weight: 300;
     margin: 0;
-  }
+    color: var(--Neutral-0);
+}
 
-  .hourly-header h2 {
-    font-size: 1.4rem;
-  }
+/* Responsive Hourly Forecast */
+@media (max-width: 1080px) {
+    .hourly-forecast {
+        width: 100%;
+        max-width: 700px;
+        max-height: none;
+    }
 
-  .day-btn {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-  }
+    .hourly-forecast-grid {
+        max-height: 400px;
+    }
+}
 
-  .hourly-card {
-    padding: 0 10px;
-  }
+@media (max-width: 768px) {
+    .hourly-forecast {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hourly-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .day-btn {
+        font-size: 1.2rem;
+        padding: 8px 10px;
+    }
+
+    .hourly-card {
+        padding: 8px 12px;
+    }
+
+    .hour-time {
+        font-size: 1.3rem;
+    }
+
+    .hour-temp {
+        font-size: 1.5rem;
+    }
 }

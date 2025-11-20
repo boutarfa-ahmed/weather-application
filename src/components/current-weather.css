@@ -1,7 +1,8 @@
 @import url('../index.css');
 
 .current-weather {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
 }
 
 /* Main Weather Card */
@@ -12,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 220px;
+    min-height: 220px;
     border-radius: 1.5rem;
     padding: 2rem;
     color: var(--Neutral-0);
@@ -20,12 +21,11 @@
     margin-bottom: 1.5rem;
 }
 
-
 .weather-card__header {
     display: flex;
     justify-content: space-between;
-    gap: 21rem;
-    justify-items: center;
+    align-items: flex-start;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
@@ -55,7 +55,6 @@
     gap: 0.75rem;
 }
 
-
 .temp-main {
     font-size: 5rem;
     font-weight: 700;
@@ -63,13 +62,17 @@
     color: var(--Neutral-0);
 }
 
+.weather-icon-head {
+    width: 9rem;
+    height: 9rem;
+}
+
 /* Weather Details Grid */
 .weather-details-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     width: 100%;
-    max-width: 700px;
 }
 
 .detail-card {
@@ -95,47 +98,69 @@
     margin: 0;
 }
 
-/* Responsive */
+/* Desktop - 4 columns */
+@media (min-width: 769px) {
+    .weather-details-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet and Mobile - 2 columns */
 @media (max-width: 768px) {
     .weather-card {
-        padding: 1.5rem;
-        max-width: 100%;
+        padding: 1.5rem 0; 
+        min-height: 220px;
     }
 
     .weather-card__header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        align-items: center;
+        gap: 0rem;
+        padding: 1.5rem;
+    }
+
+    .location-info {
+        padding-top: 0;
     }
 
     .temperature-display {
-        align-self: flex-end;
+        align-self: center;
+        gap: 4rem;
     }
 
     .temp-main {
-        font-size: 4rem;
+        font-size: 7rem;
     }
 
-    .weather-icon {
-        font-size: 2.5rem;
+    .weather-icon-head {
+        width: 7rem;
+        height: 7rem;
     }
 
     .location-name {
-        font-size: 1.25rem;
+        font-size: 2rem;
     }
 
-    .weather-details-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
+    .current-date {
+        font-size: 1.7rem;
+    }
+
+    .detail-label {
+        font-size: 1.5rem;
+    }
+
+    .detail-value {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .temp-main {
-        font-size: 3.5rem;
+        font-size: 7rem;
     }
 
-    .weather-icon {
-        font-size: 2rem;
+    .weather-icon-head {
+        width: 7rem;
+        height: 7rem;
     }
 }

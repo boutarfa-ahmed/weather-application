@@ -30,6 +30,18 @@
   font-weight: 700;
 }
 
+@media (max-width:500px) {
+  .header{
+    padding: 2rem 1.5rem;
+  }
+
+  .header__logo img{
+    width: 14rem;
+    height: 4.5rem;
+  }
+  
+}
+
 /* Dropdown Container */
 .header__units {
   position: relative;

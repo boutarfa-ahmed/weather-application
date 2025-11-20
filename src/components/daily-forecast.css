@@ -1,24 +1,23 @@
-@import url('../index.css');
-
-.daily-forecast{
+.daily-forecast {
     max-width: 700px;
     margin-top: 3.5rem;
+    width: 100%;
 }
 
-.daily-forecast h2{
+.daily-forecast h2 {
     color: var(--Neutral-0);
     font-size: 1.8rem;
     font-weight: 400;
 }
 
-.forecast-grid{
+.forecast-grid {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
-   margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.forecast-card{
+.forecast-card {
     background-color: var(--Neutral-800);
     border-radius: 8px;
     padding: 1rem 0.5rem;
@@ -27,29 +26,84 @@
     gap: 1rem;
 }
 
-.day-name{
+.day-name {
     text-align: center;
     font-weight: 500;
+    font-size: 1.4rem;
 }
 
-.weather-icon{
-    text-align: center;
+.weather-icon {
+    margin: auto;
+    height: 5rem;
+    width: 5rem;
 }
 
-.weather-icon-img{
-    width: 4.5rem;
-    height: 4.5rem;
-    
+.weather-icon-img {
+    width: 100%;
+    height: 100%;
 }
 
-.temperature{
+.temperature {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
 }
 
-.temperature span{
+.temperature span {
     font-weight: 400;
     font-size: 1.2rem;
     color: var(--Neutral-200);
+}
+
+/* Responsive Daily Forecast */
+@media (max-width: 768px) {
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    .forecast-card {
+        padding: 0.8rem 0.4rem;
+    }
+
+    .day-name {
+        font-size: 1.7rem;
+    }
+
+    .weather-icon {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .daily-forecast {
+        margin-top: 2rem;
+    }
+
+    .daily-forecast h2 {
+        font-size: 1.6rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+
+    .day-name {
+        font-size: 1.4rem;
+    }
+
+    .weather-icon {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .temperature {
+        gap: 1.5rem;
+    }
+
+    .temperature span {
+        font-size: 1.2rem;
+    }
 }
